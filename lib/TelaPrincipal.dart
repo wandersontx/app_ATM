@@ -1,3 +1,7 @@
+import 'package:app_atm/TelaClientes.dart';
+import 'package:app_atm/TelaContato.dart';
+import 'package:app_atm/TelaEmpresa.dart';
+import 'package:app_atm/TelaServico.dart';
 import 'package:flutter/material.dart';
 
 class TelaPrincipal extends StatefulWidget {
@@ -59,5 +63,24 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     );
   }
 
-  void _abrirMenu(String opcao) {}
+  void _abrirMenu(String opcao) {
+    switch (opcao) {
+      case 'empresa':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaEmpresa()));
+        break;
+      case 'servico':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaServico()));
+        break;
+      case 'cliente':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaClientes()));
+        break;
+      case 'contato':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaContato()));
+        break;
+    }
+  }
 }
